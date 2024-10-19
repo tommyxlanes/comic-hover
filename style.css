@@ -435,7 +435,7 @@ header li:hover {
   z-index: -1;
   background: radial-gradient(
     circle farthest-side at center bottom,
-    #fbff2b,
+    #f7fa30,
     #09963f
   );
   background-repeat: no-repeat;
