@@ -230,3 +230,225 @@ body {
 .doodle-square svg {
   width: 40%;
 }
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  border-bottom: 1px solid #fff4;
+}
+
+header ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  list-style: none;
+}
+header li {
+  padding: 30px 40px;
+  color: #fff;
+}
+header li.active,
+header li:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* background: radial-gradient(
+    circle,
+    rgba(154, 223, 63, 1) 0%,
+    rgba(30, 130, 54, 1) 100%
+  );
+  background-position: center bottom; 
+  background-size: 100% 50%; 
+  z-index: 2; */
+  overflow: hidden;
+}
+/* .slider::before {
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  content: '';
+  top: 0;
+  left: 0;
+  background-color: #e88735;
+} */
+
+.title {
+  position: absolute;
+  top: 20%;
+  right: 60%;
+  text-align: right;
+  color: #fff;
+  font-size: 6rem;
+  width: 40%;
+  font-family: 'Pacifico', cursive;
+  text-shadow: 3px 5px 0px #478860;
+  line-height: 0.9em;
+  transform: rotate(-5deg);
+}
+.images {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  --rotate: 0deg;
+  transform: translate(-50%, 50%) rotate(var(--rotate));
+  width: 1300px;
+  height: 1300px;
+  border-radius: 50%;
+  transition: transform 0.5s ease-in-out;
+  outline: 3px dashed rgba(36, 35, 35, 0.333);
+  outline-offset: -100px;
+}
+.images .item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  rotate: calc(60deg * var(--i));
+}
+
+.images .item img {
+  height: 300px;
+  transition: all 0.5s ease-in-out;
+}
+
+.content {
+  color: #fff;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 100%;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #333;
+}
+.content h1 {
+  color: #333;
+  font-size: 2.4rem;
+}
+.content button {
+  margin-top: 30px;
+  padding: 12px 25px;
+  border-radius: 180px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.content button:hover {
+  background: #fff;
+  color: #333;
+}
+.content .item {
+  display: none;
+  width: 90%;
+  margin: auto;
+}
+.content .item.active {
+  display: block;
+  display: flex;
+  justify-content: space-between;
+}
+.flavor {
+  color: gold;
+  font-family: 'Permanent Marker';
+  font-size: 26px;
+}
+@keyframes showContent {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.content .item.active h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: 'Permanent Marker';
+  opacity: 0;
+  animation: showContent 0.5s ease-in-out 1 forwards;
+  line-height: 1;
+  width: 50%;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+}
+.content .item.active .des {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  animation: showContent 0.5s 0.3s ease-in-out 1 forwards;
+  width: 30%;
+  font-size: 16px;
+  color: #fff;
+}
+.content .item.active button {
+  width: fit-content;
+  opacity: 0;
+  animation: showContent 0.5s 0.6s ease-in-out 1 forwards;
+}
+
+#prev,
+#next {
+  position: absolute;
+  border: none;
+  top: 50%;
+  left: 5%;
+  font-size: 85px;
+  font-family: cursive;
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: bold;
+  opacity: 0.85;
+  cursor: pointer;
+  transition: all 0.3 ease-in-out;
+}
+#next {
+  left: unset;
+  right: 5%;
+}
+#next:hover,
+#prev:hover {
+  opacity: 1;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(
+    circle farthest-side at center bottom,
+    #fbff2b,
+    #09963f
+  );
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  overflow: hidden;
+}
+
+.bg img {
+  position: absolute; /* Position it relative to the slider */
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.38;
+}
