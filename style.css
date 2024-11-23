@@ -236,6 +236,21 @@ body {
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+}
+header ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+header ul li {
+  cursor: pointer;
+}
+/* header {
   position: absolute;
   width: 100%;
   z-index: 100;
@@ -258,7 +273,7 @@ header li {
 header li.active,
 header li:hover {
   border-bottom: 2px solid #fff;
-}
+} */
 
 .slider {
   position: relative;
@@ -306,8 +321,8 @@ header li:hover {
   width: 1300px;
   height: 1300px;
   border-radius: 50%;
-  transition: transform 0.5s ease-in-out;
-  outline: 3px dashed rgba(36, 35, 35, 0.333);
+  transition: transform 0.5s ease-in;
+  /* inline: 3px dashed rgba(36, 35, 35, 0.333); */
   outline-offset: -100px;
 }
 .images .item {
@@ -320,7 +335,7 @@ header li:hover {
 
 .images .item img {
   height: 300px;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-out;
 }
 
 .content {
